@@ -7,55 +7,58 @@ const emojify = (text: string) => twemoji.parse(text, twOptions);
 
 function getCss(fontSize: string) {
   return `
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP');
-    @import url('https://fonts.googleapis.com/css2?family=Roboto');
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP");
+  @import url("https://fonts.googleapis.com/css2?family=Roboto");
+  
+  body {
+    background-color: #223;
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
 
-    body {
-        background-color: #223;
-        background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-        height: 100vh;
-        display: flex;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .logo-wrapper {
-        display: flex;
-        align-items: center;
-        align-content: center;
-        justify-content: center;
-        justify-items: center;
-    }
-
-    .logo {
-        margin: 0 75px;
-    }
-
-    .plus {
-        color: #BBB;
-        font-family: Times New Roman, Verdana;
-        font-size: 100px;
-    }
-
-    .spacer {
-        margin: 150px;
-    }
-
-    .emoji {
-        height: 1em;
-        width: 1em;
-        margin: 0 .05em 0 .1em;
-        vertical-align: -0.1em;
-    }
-    
-    .heading {
-        font-family: 'Noto Sans JP', 'Roboto', sans-serif;
-        font-size: ${sanitizeHtml(fontSize)};
-        font-style: normal;
-        color: #fff;
-        line-height: 1.8;
-    }`;
+  .content {
+      filter: drop-shadow(0 5px 8px #000a);
+  }
+  
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+  }
+  
+  .logo {
+    margin: 0 75px;
+  }
+  
+  .plus {
+    color: #bbb;
+    font-family: Times New Roman, Verdana;
+    font-size: 100px;
+  }
+  
+  .spacer {
+    margin: 150px;
+  }
+  
+  .emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 0.05em 0 0.1em;
+    vertical-align: -0.1em;
+  }
+  
+  .heading {
+    font-family: "Noto Sans JP", "Roboto", sans-serif;
+    font-size: ${sanitizeHtml(fontSize)};
+    font-style: normal;
+    color: #fff;
+    line-height: 1.5;
+  }`;
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
@@ -69,7 +72,7 @@ export function getHtml(parsedReq: ParsedRequest) {
         ${getCss(fontSize)}
     </style>
     <body>
-        <div>
+        <div class="content">
             <div class="spacer">
             <div class="logo-wrapper">
                 ${images
