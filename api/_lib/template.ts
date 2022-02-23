@@ -1,4 +1,3 @@
-import { readFileSync } from "fs";
 import { marked } from "marked";
 import { sanitizeHtml } from "./sanitizer";
 import { ParsedRequest } from "./types";
@@ -6,65 +5,19 @@ const twemoji = require("twemoji");
 const twOptions = { folder: "svg", ext: ".svg" };
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 
-const rglr = readFileSync(
-  `${__dirname}/../_fonts/Inter-Regular.woff2`
-).toString("base64");
-const bold = readFileSync(`${__dirname}/../_fonts/Inter-Bold.woff2`).toString(
-  "base64"
-);
-const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString(
-  "base64"
-);
-
-function getCss(theme: string, fontSize: string) {
+function getCss(fontSize: string) {
   return `
-    @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
-
-    @font-face {
-        font-family: 'Inter';
-        font-style:  normal;
-        font-weight: normal;
-        src: url(data:font/woff2;charset=utf-8;base64,${rglr}) format('woff2');
-    }
-
-    @font-face {
-        font-family: 'Inter';
-        font-style:  normal;
-        font-weight: bold;
-        src: url(data:font/woff2;charset=utf-8;base64,${bold}) format('woff2');
-    }
-
-    @font-face {
-        font-family: 'Vera';
-        font-style: normal;
-        font-weight: normal;
-        src: url(data:font/woff2;charset=utf-8;base64,${mono})  format("woff2");
-      }
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto');
 
     body {
         background-color: #223;
-        background-image: ${
-          theme === "light"
-            ? "linear-gradient(to right, #0f0c29, #302b63, #24243e)"
-            : "linear-gradient(to right, #0f0c29, #302b63, #24243e)"
-        };
-        background-size: 100px 100px;
+        background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
         height: 100vh;
         display: flex;
         text-align: center;
         align-items: center;
         justify-content: center;
-    }
-
-    code {
-        color: #D400FF;
-        font-family: 'Vera';
-        white-space: pre-wrap;
-        letter-spacing: -5px;
-    }
-
-    code:before, code:after {
-        content: '\`';
     }
 
     .logo-wrapper {
@@ -97,7 +50,7 @@ function getCss(theme: string, fontSize: string) {
     }
     
     .heading {
-        font-family: 'M PLUS 1p', 'Inter', sans-serif;
+        font-family: 'Noto Sans JP', "Roboto,  sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
         color: #fff;
@@ -106,14 +59,14 @@ function getCss(theme: string, fontSize: string) {
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
-  const { text, theme, md, fontSize, images, widths, heights } = parsedReq;
+  const { text, md, fontSize, images, widths, heights } = parsedReq;
   return `<!DOCTYPE html>
 <html>
     <meta charset="utf-8">
     <title>Generated Image</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        ${getCss(theme, fontSize)}
+        ${getCss(fontSize)}
     </style>
     <body>
         <div>
