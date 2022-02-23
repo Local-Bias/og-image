@@ -17,15 +17,6 @@ const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString(
 );
 
 function getCss(theme: string, fontSize: string) {
-  let background = "white";
-  let foreground = "black";
-  let radial = "lightgray";
-
-  if (theme === "dark") {
-    background = "black";
-    foreground = "white";
-    radial = "dimgray";
-  }
   return `
     @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p');
 
@@ -51,7 +42,11 @@ function getCss(theme: string, fontSize: string) {
       }
 
     body {
-        background-image: background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+        background-image: ${
+          theme === "light"
+            ? "background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e)"
+            : "background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e)"
+        };
         background-size: 100px 100px;
         height: 100vh;
         display: flex;
