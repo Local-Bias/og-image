@@ -50,7 +50,7 @@ function getCss(fontSize: string) {
     }
     
     .heading {
-        font-family: 'Noto Sans JP', "Roboto,  sans-serif;
+        font-family: 'Noto Sans JP', 'Roboto', sans-serif;
         font-size: ${sanitizeHtml(fontSize)};
         font-style: normal;
         color: #fff;
