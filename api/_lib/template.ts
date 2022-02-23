@@ -26,7 +26,6 @@ function getCss(fontSize: string) {
         align-content: center;
         justify-content: center;
         justify-items: center;
-        font-size: ${sanitizeHtml(fontSize)};
     }
 
     .logo {
@@ -60,7 +59,7 @@ function getCss(fontSize: string) {
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
-  const { text, md, fontSize } = parsedReq;
+  const { text, md, fontSize, images, widths, heights } = parsedReq;
   return `<!DOCTYPE html>
 <html>
     <meta charset="utf-8">
@@ -72,7 +71,13 @@ export function getHtml(parsedReq: ParsedRequest) {
     <body>
         <div>
             <div class="spacer">
-            <div class="logo-wrapper">📦</div>
+            <div class="logo-wrapper">
+                ${images
+                  .map(
+                    (_, i) => getPlusSign(i) + getImage(widths[i], heights[i])
+                  )
+                  .join("")}
+            </div>
             <div class="spacer">
             <div class="heading">${emojify(
               md ? marked(text) : sanitizeHtml(text)
@@ -81,4 +86,18 @@ export function getHtml(parsedReq: ParsedRequest) {
         </div>
     </body>
 </html>`;
+}
+
+function getImage(width = "auto", height = "225") {
+  return `<img
+        class="logo"
+        alt="Generated Image"
+        src="/images/cube.png"
+        width="${sanitizeHtml(width)}"
+        height="${sanitizeHtml(height)}"
+    />`;
+}
+
+function getPlusSign(i: number) {
+  return i === 0 ? "" : '<div class="plus">+</div>';
 }
