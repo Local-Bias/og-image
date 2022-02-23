@@ -92,7 +92,7 @@ function getImage(width = "auto", height = "225") {
   return `<img
         class="logo"
         alt="Generated Image"
-        src="/images/cube.png"
+        src="https://conomi.app/icons/icon-512x512.png"
         width="${sanitizeHtml(width)}"
         height="${sanitizeHtml(height)}"
     />`;
