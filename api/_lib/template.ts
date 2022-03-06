@@ -12,6 +12,7 @@ function getCss(fontSize: string) {
   
   body {
     background-color: #223;
+    background-image: url("/images/5291450.jpg");
     height: 100vh;
     display: flex;
     text-align: center;
@@ -20,7 +21,17 @@ function getCss(fontSize: string) {
   }
 
   .content {
-      filter: drop-shadow(0 5px 8px #000a);
+    filter: drop-shadow(0 5px 8px #000a);
+    letter-spacing : 8px;
+    text-shadow: 
+          5px  5px 0px #003366,
+        -5px  5px 0px #003366,
+          5px -5px 0px #003366,
+        -5px -5px 0px #003366,
+          5px  0px 0px #003366,
+          0px  5px 0px #003366,
+        -5px  0px 0px #003366,
+          0px -5px 0px #003366; 
   }
   
   .logo-wrapper {
