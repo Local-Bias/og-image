@@ -12,7 +12,7 @@ function getCss(fontSize: string) {
   
   body {
     background-color: #223;
-    background-image: url("/images/5291450.jpg");
+    background-image: url("https://og-image.z.konomi.app/images/5291450.jpg");
     height: 100vh;
     display: flex;
     text-align: center;
