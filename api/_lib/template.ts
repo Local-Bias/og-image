@@ -43,7 +43,7 @@ function getCss(fontSize: string) {
 }
 
 export function getHtml(parsedReq: ParsedRequest) {
-  const { text, md, fontSize, images, widths, heights } = parsedReq;
+  const { text, md, fontSize } = parsedReq;
   return `<!DOCTYPE html>
 <html>
     <meta charset="utf-8">
