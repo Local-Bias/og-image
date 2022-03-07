@@ -11,6 +11,7 @@ function getCss(fontSize: string) {
   @import url("https://fonts.googleapis.com/css2?family=Roboto");
   
   body {
+    font-family: "Noto Sans JP", "Roboto", sans-serif;
     background-color: #223;
     background-image: url("https://og-image.z.konomi.app/images/5291450.jpg");
     height: 100vh;
@@ -24,51 +25,20 @@ function getCss(fontSize: string) {
     filter: drop-shadow(0 5px 8px #000a);
     letter-spacing : 8px;
     text-shadow: 
-          5px  5px 0px #003366,
-        -5px  5px 0px #003366,
-          5px -5px 0px #003366,
-        -5px -5px 0px #003366,
-          5px  0px 0px #003366,
-          0px  5px 0px #003366,
-        -5px  0px 0px #003366,
-          0px -5px 0px #003366; 
+          10px  10px 0px #fff,
+        -10px  10px 0px #fff,
+          10px -10px 0px #fff,
+        -10px -10px 0px #fff,
+          10px  0px 0px #fff,
+          0px  10px 0px #fff,
+        -10px  0px 0px #fff,
+          0px -10px 0px #fff; 
+    color: #333c5e;
+    font-weight: 600;
   }
-  
-  .logo-wrapper {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    justify-items: center;
-  }
-  
-  .logo {
-    margin: 0 75px;
-  }
-  
-  .plus {
-    color: #bbb;
-    font-family: Times New Roman, Verdana;
-    font-size: 100px;
-  }
-  
-  .spacer {
-    margin: 150px;
-  }
-  
-  .emoji {
-    height: 1em;
-    width: 1em;
-    margin: 0 0.05em 0 0.1em;
-    vertical-align: -0.1em;
-  }
-  
+
   .heading {
-    font-family: "Noto Sans JP", "Roboto", sans-serif;
     font-size: ${sanitizeHtml(fontSize)};
-    font-style: normal;
-    color: #fff;
-    line-height: 1.5;
   }`;
 }
 
@@ -84,15 +54,6 @@ export function getHtml(parsedReq: ParsedRequest) {
     </style>
     <body>
         <div class="content">
-            <div class="spacer">
-            <div class="logo-wrapper">
-                ${images
-                  .map(
-                    (_, i) => getPlusSign(i) + getImage(widths[i], heights[i])
-                  )
-                  .join("")}
-            </div>
-            <div class="spacer">
             <div class="heading">${emojify(
               md ? marked(text) : sanitizeHtml(text)
             )}
@@ -100,18 +61,4 @@ export function getHtml(parsedReq: ParsedRequest) {
         </div>
     </body>
 </html>`;
-}
-
-function getImage(width = "auto", height = "225") {
-  return `<img
-        class="logo"
-        alt="Generated Image"
-        src="https://conomi.app/icons/icon-512x512.png"
-        width="${sanitizeHtml(width)}"
-        height="${sanitizeHtml(height)}"
-    />`;
-}
-
-function getPlusSign(i: number) {
-  return i === 0 ? "" : '<div class="plus">+</div>';
 }
