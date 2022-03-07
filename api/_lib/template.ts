@@ -8,18 +8,19 @@ const emojify = (text: string) => twemoji.parse(text, twOptions);
 
 function getCss() {
   return `
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP");
-  @import url("https://fonts.googleapis.com/css2?family=Roboto");
   
   body {
-    font-family: "Noto Sans JP", "Roboto", sans-serif;
+    font-family: "Roboto", "M PLUS Rounded 1c", "Noto Sans JP", sans-serif;
     background-color: #223;
     background-image: url("https://og-image.z.konomi.app/images/5291450.jpg");
     background-size: 100% auto;
 
-    height: calc(100vh - 14vmin);
-    width: calc(100vw - 14vmin);
-    padding: 7vmin;
+    height: 90vh;
+    width: 80vw;
+    padding: 5vh 10vw;
 
     display: grid;
     grid-template:
@@ -49,7 +50,7 @@ function getCss() {
       -10px -10px #fff, 10px 0px #fff, 0px 10px #fff, -10px 0px #fff,
       0px -10px #fff;
     color: #333c5e;
-    font-weight: 600;
+    font-weight: 800;
   }
 
   .image {
@@ -66,7 +67,7 @@ function getCss() {
   }
 
   .heading {
-    font-size: 120px;
+    font-size: 100px;
   }`;
 }
 
