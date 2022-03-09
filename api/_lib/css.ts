@@ -35,10 +35,10 @@ body {
   justify-content: center;
 
   filter: drop-shadow(0 5px 8px #333c5eaa);
-  letter-spacing: 8px;
-  text-shadow: 12px 12px #fff, -12px 12px #fff, 12px -12px #fff,
-    -12px -12px #fff, 12px 0px #fff, 0px 12px #fff,
-    -12px 0px #fff, 0px -12px #fff;
+  letter-spacing: 4px;
+  text-shadow: 8px 8px #fff, -8px 8px #fff, 8px -8px #fff,
+    -8px -8px #fff, 8px 0px #fff, 0px 8px #fff,
+    -8px 0px #fff, 0px -8px #fff;
   font-weight: 800;
 }
 
@@ -56,7 +56,7 @@ body {
 }
 
 .heading {
-  font-size: 100px;
+  font-size: 60px;
 }
 `;
 
