@@ -3,7 +3,6 @@ import {
   getCssPatternA,
   getCssPatternB,
   getCssPatternC,
-  getCssPatternD,
   getGlobalCss,
 } from "./css";
 import { sanitizeHtml } from "./sanitizer";
