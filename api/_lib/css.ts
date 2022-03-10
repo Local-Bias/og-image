@@ -4,13 +4,18 @@ export const getGlobalCss = () => `
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP");
 
 body {
-  font-family: "Roboto", "M PLUS Rounded 1c", "Noto Sans JP", sans-serif;
-  background-color: #223;
-  background-size: 100% auto;
+  font-family: "Roboto", "M PLUS Rounded 1c", "Noto Sans JP", 'Yu Gothic Medium', 'ヒラギノ角ゴ Pro W3', '游ゴシック体', 'Yu Gothic', YuGothic,
+  'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
 
-  height: 90vh;
-  width: 80vw;
-  padding: 5vh 10vw;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #0003;
+
+  height: calc(76vh + 12vmin);
+  width: calc(76vw + 12vmin);
+  padding: calc(12vh - 6vmin) calc(12vw - 6vmin);
 
   display: grid;
   grid-template:
@@ -34,7 +39,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  filter: drop-shadow(0 5px 8px #333c5eaa);
+  filter: drop-shadow(0 1px 3px #333c5ecc);
   letter-spacing: 4px;
   text-shadow: 8px 8px #fff, -8px 8px #fff, 8px -8px #fff,
     -8px -8px #fff, 8px 0px #fff, 0px 8px #fff,

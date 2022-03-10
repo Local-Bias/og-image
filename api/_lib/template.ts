@@ -1,15 +1,10 @@
-import { marked } from "marked";
-import {
-  getCssPatternA,
-  getCssPatternB,
-  getCssPatternC,
-  getGlobalCss,
-} from "./css";
-import { sanitizeHtml } from "./sanitizer";
-import { ParsedRequest } from "./types";
+import { marked } from 'marked';
+import { getCssPatternA, getCssPatternB, getCssPatternC, getGlobalCss } from './css';
+import { sanitizeHtml } from './sanitizer';
+import { ParsedRequest } from './types';
 
-const twemoji = require("twemoji");
-const twOptions = { folder: "svg", ext: ".svg" };
+const twemoji = require('twemoji');
+const twOptions = { folder: 'svg', ext: '.svg' };
 const emojify = (text: string) => twemoji.parse(text, twOptions);
 
 export function getHtml(parsedReq: ParsedRequest) {
@@ -19,7 +14,7 @@ export function getHtml(parsedReq: ParsedRequest) {
 
   const pattern = Math.floor(Math.random() * cssPatterns.length);
 
-  console.log("🐢 choosed index", pattern);
+  console.log('🐢 choosed index', pattern);
 
   return `<!DOCTYPE html>
 <html>
