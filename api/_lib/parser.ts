@@ -6,11 +6,8 @@ export function parseRequest(req: IncomingMessage) {
   console.log('ℹ️  HTTP ' + req.url);
 
   const { pathname, query } = parse(req.url || '/', true);
-  const { fontSize, images, theme, md, viewportType, size } = query || {};
+  const { images, theme, md, viewportType, size } = query || {};
 
-  if (Array.isArray(fontSize)) {
-    throw new Error('Expected a single fontSize');
-  }
   if (Array.isArray(theme)) {
     throw new Error('Expected a single theme');
   }
