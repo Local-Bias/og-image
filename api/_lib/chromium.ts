@@ -1,6 +1,6 @@
 import core, { Viewport } from 'puppeteer-core';
 import { getOptions } from './options';
-import { FileType, MAX_VIEWPORT_SIZE, ViewportTypeName, VIEWPORT_TYPES } from './types';
+import { FileType, ViewportTypeName, VIEWPORT_TYPES } from './types';
 let _page: core.Page | null;
 
 async function getPage(isDev: boolean) {
