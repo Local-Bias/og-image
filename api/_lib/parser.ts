@@ -1,12 +1,12 @@
 import { IncomingMessage } from 'http';
 import { parse } from 'url';
-import { ParsedRequest, Theme, ViewportTypeName, VIEWPORT_TYPES } from './types';
+import { MAX_VIEWPORT_SIZE, ParsedRequest, Theme, ViewportTypeName, VIEWPORT_TYPES } from './types';
 
 export function parseRequest(req: IncomingMessage) {
-  console.log('ℹ️ HTTP ' + req.url);
+  console.log('ℹ️  HTTP ' + req.url);
 
   const { pathname, query } = parse(req.url || '/', true);
-  const { fontSize, images, widths, heights, theme, md, viewportType } = query || {};
+  const { fontSize, images, widths, heights, theme, md, viewportType, size } = query || {};
 
   if (Array.isArray(fontSize)) {
     throw new Error('Expected a single fontSize');
@@ -18,7 +18,7 @@ export function parseRequest(req: IncomingMessage) {
     throw new Error('Expected a single viewport');
   }
 
-  console.log('ℹ️', { pathname, query });
+  console.log('ℹ️  ', { pathname, query });
 
   const arr = (pathname || '/').slice(1).split('.');
   let extension = '';
@@ -42,10 +42,8 @@ export function parseRequest(req: IncomingMessage) {
     text: decodeURIComponent(text),
     theme: theme === 'dark' ? 'dark' : 'light',
     md: md === '1' || md === 'true',
-    fontSize: fontSize || '96px',
     images: getArray(images),
-    widths: getArray(widths),
-    heights: getArray(heights),
+    size: size && !isNaN(Number(size)) ? Number(size) : MAX_VIEWPORT_SIZE,
   };
   parsedRequest.images = getDefaultImages(parsedRequest.images, parsedRequest.theme);
   return parsedRequest;

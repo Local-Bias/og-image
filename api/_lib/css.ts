@@ -39,11 +39,11 @@ body {
   align-items: center;
   justify-content: center;
 
-  filter: drop-shadow(0 1px 3px #333c5ecc);
+  filter: drop-shadow(0 0.1vmax 0.4vmax #333c5ecc);
   letter-spacing: 4px;
-  text-shadow: 8px 8px #fff, -8px 8px #fff, 8px -8px #fff,
-    -8px -8px #fff, 8px 0px #fff, 0px 8px #fff,
-    -8px 0px #fff, 0px -8px #fff;
+  text-shadow: 0.5vmax 0.5vmax #fff, -0.5vmax 0.5vmax #fff, 0.5vmax -0.5vmax #fff,
+    -0.5vmax -0.5vmax #fff, 0.5vmax 0px #fff, 0px 0.5vmax #fff,
+    -0.5vmax 0px #fff, 0px -0.5vmax #fff;
   font-weight: 800;
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 .heading {
-  font-size: 60px;
+  font-size: 6vmax;
 }
 `;
 

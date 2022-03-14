@@ -16,8 +16,8 @@ export default async function handler(req: IncomingMessage, res: ServerResponse)
       res.end(html);
       return;
     }
-    const { fileType, viewportType } = parsedReq;
-    const file = await getScreenshot(html, fileType, isDev, viewportType);
+    const { fileType, viewportType, size } = parsedReq;
+    const file = await getScreenshot(html, fileType, isDev, size, viewportType);
     res.statusCode = 200;
     res.setHeader('Content-Type', `image/${fileType}`);
     res.setHeader(
