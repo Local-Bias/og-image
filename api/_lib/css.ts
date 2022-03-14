@@ -41,8 +41,16 @@ body {
 
   filter: drop-shadow(0 0.1vmax 0.4vmax #333c5ecc);
   letter-spacing: 4px;
-  text-shadow: 0.5vmax 0.5vmax #fff, -0.5vmax 0.5vmax #fff, 0.5vmax -0.5vmax #fff,
-    -0.5vmax -0.5vmax #fff, 0.5vmax 0px #fff, 0px 0.5vmax #fff,
+  text-shadow:
+  0.5vmax 0.5vmax #fff, 0.4vmax 0.5vmax #fff, 0.3vmax 0.5vmax #fff, 0.2vmax 0.5vmax #fff, 0.1vmax 0.5vmax #fff,
+  0.5vmax 0.5vmax #fff, 0.5vmax 0.4vmax #fff, 0.5vmax 0.3vmax #fff, 0.5vmax 0.2vmax #fff, 0.5vmax 0.1vmax #fff,
+  -0.5vmax 0.5vmax #fff, -0.4vmax 0.5vmax #fff, -0.3vmax 0.5vmax #fff, -0.2vmax 0.5vmax #fff, -0.1vmax 0.5vmax #fff,
+  -0.5vmax 0.5vmax #fff, -0.5vmax 0.4vmax #fff, -0.5vmax 0.3vmax #fff, -0.5vmax 0.2vmax #fff, -0.5vmax 0.1vmax #fff,
+  0.5vmax -0.5vmax #fff, 0.5vmax -0.4vmax #fff, 0.5vmax -0.3vmax #fff, 0.5vmax -0.2vmax #fff, 0.5vmax -0.1vmax #fff,
+  0.5vmax -0.5vmax #fff, 0.4vmax -0.5vmax #fff, 0.3vmax -0.5vmax #fff, 0.2vmax -0.5vmax #fff, 0.1vmax -0.5vmax #fff,
+  -0.5vmax -0.5vmax #fff, -0.5vmax -0.4vmax #fff, -0.5vmax -0.3vmax #fff, -0.5vmax -0.2vmax #fff, -0.5vmax -0.1vmax #fff,
+  -0.5vmax -0.5vmax #fff, -0.4vmax -0.5vmax #fff, -0.3vmax -0.5vmax #fff, -0.2vmax -0.5vmax #fff, -0.1vmax -0.5vmax #fff,
+     0.5vmax 0px #fff, 0px 0.5vmax #fff,
     -0.5vmax 0px #fff, 0px -0.5vmax #fff;
   font-weight: 800;
 }
@@ -94,7 +102,61 @@ export const getCssPatternC = () => `
 
 export const getCssPatternD = () => `
   body {
-    background-image: url("https://og-image.z.konomi.app/images/6071843.jpg");
+    background-image: url("https://og-image.z.konomi.app/images/5315093.jpg");
+  }
+  .content {
+    color: #00517c;
+  }
+`;
+
+export const getCssPatternE = () => `
+  body {
+    background-image: url("https://og-image.z.konomi.app/images/5348495.jpg");
+  }
+  .content {
+    color: #8095ce;
+  }
+`;
+
+export const getCssPatternF = () => `
+  body {
+    background-image: url("https://og-image.z.konomi.app/images/5586989.jpg");
+  }
+  .content {
+    color: #c25d53;
+  }
+`;
+
+export const getCssPatternG = () => `
+  body {
+    background-image: url("https://og-image.z.konomi.app/images/5562006.jpg");
+  }
+  .content {
+    color: #333c5e;
+  }
+`;
+
+export const getCssPatternH = () => `
+  body {
+    background-image: url("https://og-image.z.konomi.app/images/5566879.jpg");
+  }
+  .content {
+    color: #c25d53;
+  }
+`;
+
+export const getCssPatternI = () => `
+  body {
+    background-image: url("https://og-image.z.konomi.app/images/5621334.jpg");
+  }
+  .content {
+    color: #8095ce;
+  }
+`;
+
+export const getCssPatternJ = () => `
+  body {
+    background-image: url("https://og-image.z.konomi.app/images/6084843.jpg");
   }
   .content {
     color: #333c5e;

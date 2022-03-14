@@ -1,5 +1,17 @@
 import { marked } from 'marked';
-import { getCssPatternA, getCssPatternB, getCssPatternC, getGlobalCss } from './css';
+import {
+  getCssPatternA,
+  getCssPatternB,
+  getCssPatternC,
+  getCssPatternD,
+  getCssPatternE,
+  getCssPatternF,
+  getCssPatternG,
+  getCssPatternH,
+  getCssPatternI,
+  getCssPatternJ,
+  getGlobalCss,
+} from './css';
 import { sanitizeHtml } from './sanitizer';
 import { ParsedRequest } from './types';
 
@@ -10,7 +22,18 @@ const emojify = (text: string) => twemoji.parse(text, twOptions);
 export function getHtml(parsedReq: ParsedRequest) {
   const { text, md } = parsedReq;
 
-  const cssPatterns = [getCssPatternA(), getCssPatternB(), getCssPatternC()];
+  const cssPatterns = [
+    getCssPatternA(),
+    getCssPatternB(),
+    getCssPatternC(),
+    getCssPatternD(),
+    getCssPatternE(),
+    getCssPatternF(),
+    getCssPatternG(),
+    getCssPatternH(),
+    getCssPatternI(),
+    getCssPatternJ(),
+  ];
 
   const pattern = Math.floor(Math.random() * cssPatterns.length);
 
