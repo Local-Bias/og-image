@@ -129,10 +129,10 @@ export const getCssPatternF = () => `
 
 export const getCssPatternG = () => `
   body {
-    background-image: url("https://og-image.z.konomi.app/images/5562006.jpg");
+    background-image: url("https://og-image.z.konomi.app/images/5294848.jpg");
   }
   .content {
-    color: #333c5e;
+    color: #135e4c;
   }
 `;
 
