@@ -87,7 +87,7 @@ export const getCssPatternB = () => `
     background-image: url("https://og-image.z.konomi.app/images/6056289.jpg");
   }
   .content {
-    color: #ee8c5b;
+    color: #ee6911;
   }
 `;
 
@@ -96,7 +96,7 @@ export const getCssPatternC = () => `
     background-image: url("https://og-image.z.konomi.app/images/6057300.jpg");
   }
   .content {
-    color: #ee8c5b;
+    color: #ee6911;
   }
 `;
 
@@ -114,7 +114,7 @@ export const getCssPatternE = () => `
     background-image: url("https://og-image.z.konomi.app/images/5348495.jpg");
   }
   .content {
-    color: #8095ce;
+    color: #2075ce;
   }
 `;
 
@@ -150,7 +150,7 @@ export const getCssPatternI = () => `
     background-image: url("https://og-image.z.konomi.app/images/5621334.jpg");
   }
   .content {
-    color: #8095ce;
+    color: #2075ce;
   }
 `;
 
